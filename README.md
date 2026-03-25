@@ -1,23 +1,20 @@
-# CRUD-Java-mysql
- // AJOUTER PRODUIT A COMMANDE
-   
-    public void ajouterProduitACommande(int idCommande, Produit produit) {
-        try {
-            Commande c = dao.rechercherParId(idCommande);
+# CRUD Java MySQL
 
-            if (c == null) {
-                System.out.println(" Commande introuvable !");
-                return;
-            }
+Projet NetBeans démontrant les opérations CRUD (Create, Read, Update, Delete) avec une base MySQL.
 
-            c.ajouterProduit(produit);
-            c.calculerMontant();
+## Prérequis
+- Java 8+
+- NetBeans IDE
+- MySQL Server
 
-            dao.modifier(c);
+## Installation
+1. Cloner le dépôt : `git clone https://github.com/olvydad/olvydad-CRUD-Java-mysql`
+2. Importer le projet dans NetBeans.
+3. Configurer la base MySQL avec le script `database.sql`.
+4. Lancer l’application.
 
-            System.out.println(" Produit ajouté. Nouveau montant : " + c.getMontant());
-
-        } catch (Exception e) {
-            System.out.println(" Erreur ajout produit : " + e.getMessage());
-        }
-    }
+## Fonctionnalités
+- Ajouter un utilisateur
+- Modifier un utilisateur
+- Supprimer un utilisateur
+- Lister les utilisateurs
