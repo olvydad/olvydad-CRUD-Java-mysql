@@ -7,11 +7,35 @@ public class Produit {
     private String nom;
     private String categorie;
     private int stock;
+    private int quantite;
     private double prix;
+    private double totalProduit;
+
+    public double getTotalProduit() {
+        return totalProduit;
+    }
+
+    public void setTotalProduit(double totalProduit) {
+        this.totalProduit = totalProduit;
+    }
 
     public Produit() {
     }
+public void setQuantite(int quantite) {
+        this.quantite = quantite;  // <- ici on stocke simplement la valeur
+    }
 
+    public int getQuantite() {
+        return quantite;
+    }
+    
+ public double getPrixUnitaire() {
+        return prix;  // <- ici on retourne la valeur
+    }
+
+    public void setPrixUnitaire(double prixUnitaire) {
+        this.prix = prixUnitaire;
+    }
     public Produit(String nom, String categorie, int stock, double prix) {
         this.nom = nom;
         this.categorie = categorie;
@@ -66,7 +90,5 @@ public class Produit {
     public void setPrix(double prix) {
         this.prix = prix;
     }
-    
-    
     
 }

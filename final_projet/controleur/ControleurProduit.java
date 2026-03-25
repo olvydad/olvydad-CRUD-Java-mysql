@@ -29,14 +29,30 @@ public class ControleurProduit {
                 case 3 ->
                     ProduitView.AfficherUn();
                case 4 ->{System.out.println("Etre vous sur de vouloir modifier?");
-                    if(Test.verifchoix()){
+                            System.out.println("Entrez 1 Si oui!");
+                             System.out.println("Entrez 0 si non!");
+                              choix = Test.verifInt();
+                         if(choix==1){
                     ProduitView.modifierProduit();}
-                    else{System.out.println("Modification annule!");}}
+                         else if (choix==0){
+                             v=true;
+                             System.out.println("Modification annule!");
+                         }
+                         else {System.out.println("Choix invalide!");}
+                    }
                 case 5 ->{System.out.println("Etre vous sur de vouloir supprimer?");
-                    if(Test.verifchoix()){
+                            System.out.println("Entrez 1 Si oui!");
+                            System.out.println("Entrez 0 si non!");
+                            choix = Test.verifInt();
+                 if(choix==1){
                     ProduitView.supprimerProduit();}
-                    else{System.out.println("Suppression annule!");}}
-                case 6 -> {
+                  else if (choix==0){
+                             v=true;
+                            System.out.println("Suppression annule!");
+                         }
+                         else {System.out.println("Choix invalide!");}
+                    }
+                case 0 -> {
                     v = false;
                     System.out.println("Aurevoir!");
                 }

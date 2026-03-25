@@ -38,9 +38,9 @@ public class ControleurClient {
     }
 
     public static void MenueClient() {
-        boolean b = true;
+        boolean v = true;
         System.out.println("======BONNE GESTION DES CLIENTS======");
-        while (b) {
+        while (v) {
             System.out.println("======MENUE====== ");
             System.out.println("1) Ajout de client.");
             System.out.println("2) Liste  des clients.");
@@ -57,15 +57,31 @@ public class ControleurClient {
                 case 3 ->
                     ClientView.AfficherUn();
                 case 4 ->{System.out.println("Etre vous sur de vouloir modifier?");
-                    if(Test.verifchoix()){
+                            System.out.println("Entrez 1 Si oui!");
+                             System.out.println("Entrez 0 si non!");
+                              choix = Test.verifInt();
+                         if(choix==1){
                     ClientView.ModiffieClient();}
-                    else{System.out.println("Modification annule!");}}
+                         else if (choix==0){
+                             v=true;
+                             System.out.println("Modification annule!");
+                         }
+                         else {System.out.println("Choix invalide!");}
+                    }
                 case 5 ->{System.out.println("Etre vous sur de vouloir supprimer?");
-                    if(Test.verifchoix()){
+                            System.out.println("Entrez 1 Si oui!");
+                            System.out.println("Entrez 0 si non!");
+                            choix = Test.verifInt();
+                 if(choix==1){
                     ClientView.SupprimeClient();}
-                    else{System.out.println("Suppression annule!");}}
+                  else if (choix==0){
+                             v=true;
+                            System.out.println("Suppression annule!");
+                         }
+                         else {System.out.println("Choix invalide!");}
+                    }
                 case 0 -> {
-                    b = false;
+                    v = false;
                     System.out.println("Aurevoir!");
                     break;
                 }

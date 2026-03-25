@@ -8,7 +8,6 @@ import org.final_projet.view.EmployeView;
 
 public class ControleurEmploye {
 
-    
     public static void MenueEmploye() {
         boolean v = true;
         System.out.println("======BONNE GESTION DES EMPLOYES======");
@@ -28,15 +27,30 @@ public class ControleurEmploye {
                     EmployeView.AfficherAllEmp();
                 case 3 ->
                     EmployeView.AfficherUn();
-                case 4 ->{System.out.println("Etre vous sur de vouloir modifier?");
-                    if(Test.verifchoix()){
+              case 4 ->{System.out.println("Etre vous sur de vouloir modifier?");
+                            System.out.println("Entrez 1 Si oui!");
+                             System.out.println("Entrez 0 si non!");
+                              choix = Test.verifInt();
+                         if(choix==1){
                     EmployeView.ModiffieEmp();}
-                    else{System.out.println("Modification annule!");}}
+                         else if (choix==0){
+                             v=true;
+                             System.out.println("Modification annule!");
+                         }
+                         else {System.out.println("Choix invalide!");}
+                    }
                 case 5 ->{System.out.println("Etre vous sur de vouloir supprimer?");
-                    if(Test.verifchoix()){
+                            System.out.println("Entrez 1 Si oui!");
+                            System.out.println("Entrez 0 si non!");
+                            choix = Test.verifInt();
+                 if(choix==1){
                     EmployeView.SupprimeEmp();}
-                    else{System.out.println("Suppression annule!");}}
-                case 0 -> {
+                  else if (choix==0){
+                             v=true;
+                            System.out.println("Suppression annule!");
+                         }
+                         else {System.out.println("Choix invalide!");}
+                    }                case 0 -> {
                     v = false;
                     System.out.println("Aurevoir!");
                 }

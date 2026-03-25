@@ -33,17 +33,14 @@ public class Test {
     static Scanner max = new Scanner(System.in);
 
     public static int verifInt() {
-        while (true) {
-            try {
-                int choix = max.nextInt();
-                max.nextLine();
-                return choix;
-            } catch (Exception e) {
-                System.out.println("Veillez rentrer un chifie!");
-                max.nextLine();
-            }
+    while (true) {
+        try {
+            return Integer.parseInt(max.nextLine());
+        } catch (Exception e) {
+            System.out.println("Entrez un nombre valide !");
         }
     }
+}
     
      public static double verifDouble() {
         while (true) {
@@ -75,23 +72,27 @@ public class Test {
     }
      
      
-      public static boolean verifchoix() {
-        boolean v=true;
-        while (v) {
-            try {
-                System.out.println("Entrez 1 Si oui!\nEntrez 0 si non!");
-                int choix = verifInt();
-                switch (choix) {
-                    case 1 -> v=true;
-                    case 0 -> v=false;
-                    default -> System.out.println("Choix invalide!");
-                }
-            } catch (Exception e) {
-                System.out.println("Veillez rentrer un chifie comme demande!");
-                max.nextLine();
+     public static boolean verifchoix() {
+    while (true) {
+        try {
+            System.out.println("Etes-vous sûr de vouloir modifier ?");
+            System.out.println("Entrez 1 Si oui!");
+            System.out.println("Entrez 0 si non!");
+
+            int choix = Test.verifInt();
+            if (choix == 1) {
+                return true;
+            } else if (choix == 0) {
+                return false;
+            } else {
+                System.out.println("Choix invalide!");
             }
+
+        } catch (Exception e) {
+            System.out.println("Veuillez entrer un chiffre comme demandé!");
+            max.nextLine();
         }
-        return v;
     }
+}
 
 }
